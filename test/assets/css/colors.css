@@ -1,0 +1,35 @@
+/*
+Colors
+
+Style Guide: 2
+*/
+
+/*
+Primary color
+
+Markup:
+<div class="primaryColor">
+    Primary Color
+</div>
+
+Style Guide: 2.1
+ */
+.primaryColor {
+    background-color: #f90;
+    color: white;
+}
+
+/*
+Secondary color
+
+Markup:
+<div class="secondaryColor">
+    Secondary Color
+</div>
+
+Style Guide: 2.1
+ */
+.secondaryColor {
+    background-color: #09f;
+    color: white;
+}

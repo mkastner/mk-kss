@@ -1,0 +1,21 @@
+<nav class="kssBody__navBar kssNavBar">
+    <ul class="kssNavBar__list">
+        <li class="kssNavBar__item
+            kssNavBar__itemRoot">
+            <a href="index.html"
+                class="kssNavBar__link">
+                FMH Finanzberatung Styleguide
+            </a>
+        </li>
+        {{#each navSections}}
+            <li class="kssNavBar__item
+                kssNavBar__itemDepth{{this.meta.depth}}">
+                <a href="{{kssUrl this}}"
+                    class="kssNavBar__link kssNavBar__linkDepth{{this.meta.depth}}">
+                    <span class="kssNavBar__itemNumber">{{this.referenceNumber}}</span>
+                    <span class="kssNavBar__itemText">{{this.header}}</span>
+                </a>
+            </li>
+        {{/each}}
+    </ul>
+</nav>

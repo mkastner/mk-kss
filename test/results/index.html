@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+<html lang="de">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet"
+            media="all"
+            href="/resources/stylesheets/kss.css" />
+        <style>
+            * {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   box-sizing: border-box;
+}
+
+.kssBody {
+    border-top: 3px solid #ddd;
+    background-color: #fff;
+}
+
+.kssBody__headline {
+    color: #333;
+    padding: 10px 5%;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.kssBody__headline {
+    font-size: 15px;
+    font-family: arial, sans-serif;
+}
+
+.kssBody__navBar {
+    font-family: arial, sans-serif;
+    font-size: 12.5px;
+    width: 20%;
+    float: left;
+}
+
+.kssNavBar {
+    width: 20%;
+    margin: 0 2.5% 0 5%;
+    padding-right: 10px;
+    border-right: 1px solid #ddd;
+}
+
+.kssNavBar__list {
+    list-style: none;
+}
+
+.kssNavBar__item {
+    list-style: none;
+}
+
+.kssNavBar__itemNumber {
+
+}
+
+.kssNavBar__itemText {
+    float: right;
+}
+
+.kssNavBar__itemDepth1 {
+    font-size: 13.5px;
+}
+
+.kssNavBar__itemDepth2 {
+    font-size: 12px;
+    padding-left: 15px;
+}
+
+.kssNavBar__linkDepth2 {
+    padding-left: 20px;
+}
+
+.kssNavBar__linkDepth2:hover {
+}
+
+.kssNavBar__itemDepth3 {
+    font-size: 12px;
+    padding-left: 30px;
+}
+
+.kssNavBar__link {
+    padding: 2.5px 5px;
+    color: #333;
+    display: block;
+    border-bottom: 1px solid #ddd;
+    text-decoration: none;
+}
+
+.kssNavBar__link:hover {
+    border-bottom: 1px solid black;
+}
+
+
+.kssMain {
+    float: left;
+    width: 60%;
+    margin: 0 5% 0 2.5%;
+    border
+}
+
+.kssMain__home {
+
+}
+
+.kssMain__home h1 {
+    border-bottom: 1px solid #ddd;
+    margin: 0 0 10px 0;
+    font-family: arial, sans-serif;
+    font-size: 14px;
+    line-height: 25px;
+    color: #333;
+}
+
+.kssMain__home h2 {
+    margin: 10px 0;
+    font-family: arial, sans-serif;
+    font-size: 13px;
+    color: #333;
+}
+
+.kssMain__home p {
+    margin: 10px 0;
+    line-height: 18px;
+    font-family: arial, sans-serif;
+    font-size: 12.5px;
+    color: #333;
+}
+
+.kssBlock {
+    margin: 0px 0 40px 0;
+    width: 100%;
+}
+
+.kssBlock__title {
+    margin: 0 0 10px 0;
+    font-family: arial, sans-serif;
+    border-bottom: 1px dotted #ddd;
+    color: #666;
+}
+
+.kssBlock__titleIndex::after {
+    content: &#x27;–&#x27;;
+}
+
+.kssBlock__titleDepth1 {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 14.5px;
+    font-family: arial, sans-serif;
+    color: #666;
+    border-bottom: 1px solid #ddd;
+}
+
+.kssBlock__titleDepth2 {
+    font-size: 12.5px;
+    line-height: 20px;
+    font-family: arial, sans-serif;
+}
+
+.kssBlock__titleDepth3 {
+    font-size: 12.5px;
+    line-height: 20px;
+    font-family: arial, sans-serif;
+}
+
+.kssBlock__pre {
+    margin: 10px 0 0 0;
+}
+
+.kssBlock__details {
+    font-family: arial, sans-serif;
+}
+
+.kssBlock__location {
+    font-size: 11px;
+    line-height: 20px;
+    color: #999;
+    font-family: arial, sans-serif;
+}
+
+.kssBlock__description {
+    font-family: arial, sans-serif;
+    font-size: 12.5px;
+    line-height: 22px;
+    margin: 0 0 10px 0;
+}
+
+.kssBlock__modifiers {
+    margin: 0 0 0 20px;
+}
+
+.kssModifiers__headline {
+    line-height: 20px;
+    font-size: 13px;
+    margin: 10px 0
+}
+
+        </style>
+            <link rel="stylesheet"
+                media="all"
+                href="https://www.galt.de/css/galt.css" />
+        <script>
+            (function() {
+
+    window.addEventListener(&#x27;load&#x27;, function() {
+
+        for (var i &#x3D; 0, l &#x3D; document.styleSheets.length; i &lt; l; i ++) {
+
+            var styleSheet &#x3D; document.styleSheets[i];
+
+            var fileName &#x3D; styleSheet.href.split(&#x27;/&#x27;).pop();
+
+            if (fileName.indexOf(&#x27;kss&#x27;) &#x3D;&#x3D;&#x3D; -1) {
+
+                var rules &#x3D; styleSheet.cssRules;
+
+                for (var j &#x3D; 0, jl &#x3D; rules.length; j &lt; jl; j++) {
+                    //console.log(&#x27;rule:&#x27;, rules[j]);
+                    if (rules[j].cssText.indexOf(&#x27;:hover&#x27;)) {
+
+                        var cssText &#x3D; rules[j].cssText.replace(&#x27;:hover&#x27;, &#x27;.pseudo-class-hover&#x27;);
+                        styleSheet.insertRule(cssText, rules.length);
+
+                    }
+
+                }
+
+            }
+
+        }
+    });
+
+})();
+
+        </script>
+    </head>
+    <body class="kssBody">
+        <header class="kssBody__header">
+            <h1 class="kssBody__headline">
+                FMH Finanzberatung Styleguide
+            </h1>
+        </header>
+        <nav class="kssBody__navBar kssNavBar">
+            <ul class="kssNavBar__list">
+                <li class="kssNavBar__item
+                    kssNavBar__itemRoot">
+                    <a href="index.html"
+                        class="kssNavBar__link">
+                        FMH Finanzberatung Styleguide
+                    </a>
+                </li>
+                    <li class="kssNavBar__item
+                        kssNavBar__itemDepth1">
+                        <a href="section-1.html"
+                            class="kssNavBar__link kssNavBar__linkDepth1">
+                            <span class="kssNavBar__itemNumber">1</span>
+                            <span class="kssNavBar__itemText">Typography</span>
+                        </a>
+                    </li>
+                    <li class="kssNavBar__item
+                        kssNavBar__itemDepth1">
+                        <a href="section-2.html"
+                            class="kssNavBar__link kssNavBar__linkDepth1">
+                            <span class="kssNavBar__itemNumber">2</span>
+                            <span class="kssNavBar__itemText">Colors</span>
+                        </a>
+                    </li>
+            </ul>
+        </nav>
+        <main class="kssMain kssMain__home">
+            <h1 id="this-is-a-test">This is a Test</h1>
+<p>This is a text on the index page.</p>
+
+        </main>
+    </body>
+</html>

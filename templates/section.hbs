@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="de">
+    <head>
+        <meta charset="utf-8" />
+        {{#each cssUrls}}
+        <link rel="stylesheet"
+                media="all"
+                href="{{this}}" />
+        {{/each}}
+        <style>
+            {{kssStyles}}
+        </style>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+        <script src="/resources/javascripts/kss.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        {{#each cssUrls}}
+            <link rel="stylesheet"
+                media="all"
+                href="{{this}}" />
+        {{/each}}
+        <script>
+            {{kssScripts}}
+        </script>
+    </head>
+    <body class="kssBody">
+        <header class="kssBody__header">
+            <h1 class="kssBody__headline">
+                FMH Finanzberatung Styleguide
+            </h1>
+        </header>
+        {{> nav-bar this}}
+        <main class="kssMain">
+            {{#each contentSections}}
+                <section class="kssBlock" id="{{this.referenceURI}}">
+                    <div class="kssBlock__details">
+                        <h2 class="kssBlock__title
+                            kssBlock__titleDepth{{this.depth}}">
+                            <span class="kssBlock__titleIndex">
+                                {{this.data.referenceNumber}}
+                            </span>
+                             {{this.header}}
+                        </h2>
+                        <p class="kssBlock__location">
+                            {{this.data.sourceFile.name}} line {{this.data.sourceFile.line}}
+                        </p>
+                        {{#if this.data.markup }}
+                            {{{this.data.markup}}}
+                            <pre class="kssBlock__pre"><code class="html">{{this.data.markup}}</code></pre>
+                        {{/if}}
+                        <div class="kssBlock__description">
+                            {{{this.description}}}
+                        </div>
+                        {{#if this.modifiers }}
+                            <div class="kssModifiers kssBlock__modifiers">
+                                <h2 class="kssModifiers__headline">Modifiers</h2>
+                                {{#eachModifier this}}
+                                    <div class="kssBlock__description">
+                                        {{{this.description}}}
+                                    </div>
+                                    {{{this.pseudoMarkup}}}
+                                    <pre class="kssBlock__pre"><code class="html">{{this.markup}}</code></pre>
+                                {{/eachModifier}}
+                            </div>
+                        {{/if}}
+                    </div>
+                </section>
+            {{/each}}
+        </main>
+    </body>
+</html>

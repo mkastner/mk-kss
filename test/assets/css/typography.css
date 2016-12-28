@@ -1,0 +1,34 @@
+/*
+Typography
+
+Style Guide: 1
+ */
+
+/*
+Headline
+
+Markup:
+<div>
+    <h1>This is a Test</h1>
+</div>
+
+Style Guide: 1.1
+ */
+h1 {
+    font-size:
+    futura, sans-serif;
+}
+
+/*
+Body
+
+Markup:
+<div>
+    <p>This is a Test</p>
+</div>
+
+Style Guide: 1.2
+ */
+body {
+    arial, sans-serif;
+}

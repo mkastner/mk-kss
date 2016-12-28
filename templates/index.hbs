@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="de">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet"
+            media="all"
+            href="/resources/stylesheets/kss.css" />
+        <style>
+            {{kssStyles}}
+        </style>
+        {{#each cssUrls}}
+            <link rel="stylesheet"
+                media="all"
+                href="{{this}}" />
+        {{/each}}
+        <script>
+            {{kssScripts}}
+        </script>
+    </head>
+    <body class="kssBody">
+        <header class="kssBody__header">
+            <h1 class="kssBody__headline">
+                FMH Finanzberatung Styleguide
+            </h1>
+        </header>
+        {{> nav-bar this}}
+        <main class="kssMain kssMain__home">
+            {{{text}}}
+        </main>
+    </body>
+</html>
