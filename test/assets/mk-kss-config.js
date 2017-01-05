@@ -17,6 +17,14 @@ let appRoot = path.resolve('./'),
                 'https://www.galt.de/css/galt.css'
             ]
         },
+        test: {
+            cssRootDir: cssRootDir,
+            styleGuideDir: styleGuideDir,
+            indexMd: indexMd,
+            referenceStyles: [
+                'https://www.galt.de/css/galt.css'
+            ]
+        },
         development: {
             cssRootDir: cssRootDir,
             styleGuideDir: styleGuideDir,

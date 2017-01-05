@@ -4,7 +4,7 @@ let co = require('co'),
     tape = require('tape'),
     fs = require('fs'),
     path = require('path'),
-    MkKss = require('mk-kss'),
+    mkKss = require(path.resolve('./index.js')),
     testResultsPath = path.join(path.resolve('./'), 'test/results');
 
 function removeFile(filePath) {
@@ -67,6 +67,6 @@ tape('templates test', function(t) {
         t.end();
     }
 
-    MkKss('test/assets/mk-kss-config.js', done);
+    mkKss('test/assets/mk-kss-config.js', done);
 
 });
