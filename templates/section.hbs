@@ -8,11 +8,10 @@
                 href="{{this}}" />
         {{/each}}
         <style>
-            {{kssStyles}}
+            {{{kssStyles}}}
         </style>
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
-        <script src="/resources/javascripts/kss.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
         {{#each cssUrls}}
             <link rel="stylesheet"
@@ -20,13 +19,13 @@
                 href="{{this}}" />
         {{/each}}
         <script>
-            {{kssScripts}}
+            {{{kssScripts}}}
         </script>
     </head>
     <body class="kssBody">
         <header class="kssBody__header">
             <h1 class="kssBody__headline">
-                FMH Finanzberatung Styleguide
+                {{title}}
             </h1>
         </header>
         {{> nav-bar this}}
@@ -46,7 +45,7 @@
                         </p>
                         {{#if this.data.markup }}
                             {{{this.data.markup}}}
-                            <pre class="kssBlock__pre"><code class="html">{{this.data.markup}}</code></pre>
+                            <pre class="kssBlock__pre"><code class="kssBlock__code html">{{this.data.markup}}</code></pre>
                         {{/if}}
                         <div class="kssBlock__description">
                             {{{this.description}}}

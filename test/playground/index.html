@@ -13,6 +13,12 @@
    box-sizing: border-box;
 }
 
+.kssBody_header {
+    position: relative !important;
+    margin: 0;
+    padding: 0;
+}
+
 .kssBody {
     border-top: 3px solid #ddd;
     background-color: #fff;
@@ -22,11 +28,8 @@
     color: #333;
     padding: 10px 5%;
     margin-bottom: 20px;
-    font-size: 14px;
-}
-
-.kssBody__headline {
     font-size: 15px;
+    background-color: #f4f4f4;
     font-family: arial, sans-serif;
 }
 
@@ -82,7 +85,7 @@
 }
 
 .kssNavBar__link {
-    padding: 2.5px 5px;
+    padding: 5px 0px;
     color: #333;
     display: block;
     border-bottom: 1px solid #ddd;
@@ -141,10 +144,6 @@
     color: #666;
 }
 
-.kssBlock__titleIndex::after {
-    content: &#x27;–&#x27;;
-}
-
 .kssBlock__titleDepth1 {
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -167,7 +166,8 @@
 }
 
 .kssBlock__pre {
-    margin: 10px 0 0 0;
+    margin: 5px 10px;
+    background-color: #f4f4f4;
 }
 
 .kssBlock__details {
@@ -201,27 +201,26 @@
         </style>
             <link rel="stylesheet"
                 media="all"
-                href="https://www.galt.de/css/galt.css" />
+                href="https://www.galt.de/css/not_galt.css" />
         <script>
             (function() {
 
-    window.addEventListener(&#x27;load&#x27;, function() {
+    window.addEventListener('load', function() {
 
-        for (var i &#x3D; 0, l &#x3D; document.styleSheets.length; i &lt; l; i ++) {
+        for (var i = 0, l = document.styleSheets.length; i < l; i ++) {
 
-            var styleSheet &#x3D; document.styleSheets[i];
+            var styleSheet = document.styleSheets[i];
+            var fileName = styleSheet.href.split('/').pop();
 
-            var fileName &#x3D; styleSheet.href.split(&#x27;/&#x27;).pop();
+            if (fileName.indexOf('kss') === -1) {
 
-            if (fileName.indexOf(&#x27;kss&#x27;) &#x3D;&#x3D;&#x3D; -1) {
+                var rules = styleSheet.cssRules;
 
-                var rules &#x3D; styleSheet.cssRules;
+                for (var j = 0, jl = rules.length; j < jl; j++) {
+                    //console.log('rule:', rules[j]);
+                    if (rules[j].cssText.indexOf(':hover')) {
 
-                for (var j &#x3D; 0, jl &#x3D; rules.length; j &lt; jl; j++) {
-                    //console.log(&#x27;rule:&#x27;, rules[j]);
-                    if (rules[j].cssText.indexOf(&#x27;:hover&#x27;)) {
-
-                        var cssText &#x3D; rules[j].cssText.replace(&#x27;:hover&#x27;, &#x27;.pseudo-class-hover&#x27;);
+                        var cssText = rules[j].cssText.replace(':hover', '.pseudo-class-hover');
                         styleSheet.insertRule(cssText, rules.length);
 
                     }
@@ -240,16 +239,17 @@
     <body class="kssBody">
         <header class="kssBody__header">
             <h1 class="kssBody__headline">
-                FMH Finanzberatung Styleguide
+                Test Styleguide
             </h1>
         </header>
+        <!-- begin nav-bar -->
         <nav class="kssBody__navBar kssNavBar">
             <ul class="kssNavBar__list">
                 <li class="kssNavBar__item
                     kssNavBar__itemRoot">
                     <a href="index.html"
                         class="kssNavBar__link">
-                        FMH Finanzberatung Styleguide
+                        Inhalt
                     </a>
                 </li>
                     <li class="kssNavBar__item
@@ -268,8 +268,17 @@
                             <span class="kssNavBar__itemText">Colors</span>
                         </a>
                     </li>
+                    <li class="kssNavBar__item
+                        kssNavBar__itemDepth1">
+                        <a href="section-3.html"
+                            class="kssNavBar__link kssNavBar__linkDepth1">
+                            <span class="kssNavBar__itemNumber">3</span>
+                            <span class="kssNavBar__itemText">Elements</span>
+                        </a>
+                    </li>
             </ul>
         </nav>
+        <!-- end nav-bar -->
         <main class="kssMain kssMain__home">
             <h1 id="this-is-a-test">This is a Test</h1>
 <p>This is a text on the index page.</p>

@@ -5,7 +5,7 @@ let co = require('co'),
     fs = require('fs'),
     path = require('path'),
     mkKss = require(path.resolve('./index.js')),
-    testResultsPath = path.join(path.resolve('./'), 'test/results');
+    testResultsPath = path.join(path.resolve('./'), 'test/playground');
 
 function removeFile(filePath) {
 

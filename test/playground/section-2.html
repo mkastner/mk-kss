@@ -1,0 +1,367 @@
+<!DOCTYPE HTML>
+<html lang="de">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet"
+                media="all"
+                href="https://www.galt.de/css/not_galt.css" />
+        <style>
+            * {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   box-sizing: border-box;
+}
+
+.kssBody_header {
+    position: relative !important;
+    margin: 0;
+    padding: 0;
+}
+
+.kssBody {
+    border-top: 3px solid #ddd;
+    background-color: #fff;
+}
+
+.kssBody__headline {
+    color: #333;
+    padding: 10px 5%;
+    margin-bottom: 20px;
+    font-size: 15px;
+    background-color: #f4f4f4;
+    font-family: arial, sans-serif;
+}
+
+.kssBody__navBar {
+    font-family: arial, sans-serif;
+    font-size: 12.5px;
+    width: 20%;
+    float: left;
+}
+
+.kssNavBar {
+    width: 20%;
+    margin: 0 2.5% 0 5%;
+    padding-right: 10px;
+    border-right: 1px solid #ddd;
+}
+
+.kssNavBar__list {
+    list-style: none;
+}
+
+.kssNavBar__item {
+    list-style: none;
+}
+
+.kssNavBar__itemNumber {
+
+}
+
+.kssNavBar__itemText {
+    float: right;
+}
+
+.kssNavBar__itemDepth1 {
+    font-size: 13.5px;
+}
+
+.kssNavBar__itemDepth2 {
+    font-size: 12px;
+    padding-left: 15px;
+}
+
+.kssNavBar__linkDepth2 {
+    padding-left: 20px;
+}
+
+.kssNavBar__linkDepth2:hover {
+}
+
+.kssNavBar__itemDepth3 {
+    font-size: 12px;
+    padding-left: 30px;
+}
+
+.kssNavBar__link {
+    padding: 5px 0px;
+    color: #333;
+    display: block;
+    border-bottom: 1px solid #ddd;
+    text-decoration: none;
+}
+
+.kssNavBar__link:hover {
+    border-bottom: 1px solid black;
+}
+
+
+.kssMain {
+    float: left;
+    width: 60%;
+    margin: 0 5% 0 2.5%;
+    border
+}
+
+.kssMain__home {
+
+}
+
+.kssMain__home h1 {
+    border-bottom: 1px solid #ddd;
+    margin: 0 0 10px 0;
+    font-family: arial, sans-serif;
+    font-size: 14px;
+    line-height: 25px;
+    color: #333;
+}
+
+.kssMain__home h2 {
+    margin: 10px 0;
+    font-family: arial, sans-serif;
+    font-size: 13px;
+    color: #333;
+}
+
+.kssMain__home p {
+    margin: 10px 0;
+    line-height: 18px;
+    font-family: arial, sans-serif;
+    font-size: 12.5px;
+    color: #333;
+}
+
+.kssBlock {
+    margin: 0px 0 40px 0;
+    width: 100%;
+}
+
+.kssBlock__title {
+    margin: 0 0 10px 0;
+    font-family: arial, sans-serif;
+    border-bottom: 1px dotted #ddd;
+    color: #666;
+}
+
+.kssBlock__titleDepth1 {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 14.5px;
+    font-family: arial, sans-serif;
+    color: #666;
+    border-bottom: 1px solid #ddd;
+}
+
+.kssBlock__titleDepth2 {
+    font-size: 12.5px;
+    line-height: 20px;
+    font-family: arial, sans-serif;
+}
+
+.kssBlock__titleDepth3 {
+    font-size: 12.5px;
+    line-height: 20px;
+    font-family: arial, sans-serif;
+}
+
+.kssBlock__pre {
+    margin: 5px 10px;
+    background-color: #f4f4f4;
+}
+
+.kssBlock__details {
+    font-family: arial, sans-serif;
+}
+
+.kssBlock__location {
+    font-size: 11px;
+    line-height: 20px;
+    color: #999;
+    font-family: arial, sans-serif;
+}
+
+.kssBlock__description {
+    font-family: arial, sans-serif;
+    font-size: 12.5px;
+    line-height: 22px;
+    margin: 0 0 10px 0;
+}
+
+.kssBlock__modifiers {
+    margin: 0 0 0 20px;
+}
+
+.kssModifiers__headline {
+    line-height: 20px;
+    font-size: 13px;
+    margin: 10px 0
+}
+
+        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+            <link rel="stylesheet"
+                media="all"
+                href="https://www.galt.de/css/not_galt.css" />
+        <script>
+            (function() {
+
+    window.addEventListener('load', function() {
+
+        for (var i = 0, l = document.styleSheets.length; i < l; i ++) {
+
+            var styleSheet = document.styleSheets[i];
+            var fileName = styleSheet.href.split('/').pop();
+
+            if (fileName.indexOf('kss') === -1) {
+
+                var rules = styleSheet.cssRules;
+
+                for (var j = 0, jl = rules.length; j < jl; j++) {
+                    //console.log('rule:', rules[j]);
+                    if (rules[j].cssText.indexOf(':hover')) {
+
+                        var cssText = rules[j].cssText.replace(':hover', '.pseudo-class-hover');
+                        styleSheet.insertRule(cssText, rules.length);
+
+                    }
+
+                }
+
+            }
+
+        }
+    });
+
+})();
+
+        </script>
+    </head>
+    <body class="kssBody">
+        <header class="kssBody__header">
+            <h1 class="kssBody__headline">
+                Test Styleguide
+            </h1>
+        </header>
+        <!-- begin nav-bar -->
+        <nav class="kssBody__navBar kssNavBar">
+            <ul class="kssNavBar__list">
+                <li class="kssNavBar__item
+                    kssNavBar__itemRoot">
+                    <a href="index.html"
+                        class="kssNavBar__link">
+                        Inhalt
+                    </a>
+                </li>
+                    <li class="kssNavBar__item
+                        kssNavBar__itemDepth1">
+                        <a href="section-1.html"
+                            class="kssNavBar__link kssNavBar__linkDepth1">
+                            <span class="kssNavBar__itemNumber">1</span>
+                            <span class="kssNavBar__itemText">Typography</span>
+                        </a>
+                    </li>
+                    <li class="kssNavBar__item
+                        kssNavBar__itemDepth1">
+                        <a href="section-2.html"
+                            class="kssNavBar__link kssNavBar__linkDepth1">
+                            <span class="kssNavBar__itemNumber">2</span>
+                            <span class="kssNavBar__itemText">Colors</span>
+                        </a>
+                    </li>
+                    <li class="kssNavBar__item
+                        kssNavBar__itemDepth2">
+                        <a href="#section-2.1"
+                            class="kssNavBar__link kssNavBar__linkDepth2">
+                            <span class="kssNavBar__itemNumber">2.1</span>
+                            <span class="kssNavBar__itemText">Primary color</span>
+                        </a>
+                    </li>
+                    <li class="kssNavBar__item
+                        kssNavBar__itemDepth2">
+                        <a href="#section-2.1"
+                            class="kssNavBar__link kssNavBar__linkDepth2">
+                            <span class="kssNavBar__itemNumber">2.1</span>
+                            <span class="kssNavBar__itemText">Secondary color</span>
+                        </a>
+                    </li>
+                    <li class="kssNavBar__item
+                        kssNavBar__itemDepth1">
+                        <a href="section-3.html"
+                            class="kssNavBar__link kssNavBar__linkDepth1">
+                            <span class="kssNavBar__itemNumber">3</span>
+                            <span class="kssNavBar__itemText">Elements</span>
+                        </a>
+                    </li>
+            </ul>
+        </nav>
+        <!-- end nav-bar -->
+        <main class="kssMain">
+                <section class="kssBlock" id="section-2">
+                    <div class="kssBlock__details">
+                        <h2 class="kssBlock__title
+                            kssBlock__titleDepth1">
+                            <span class="kssBlock__titleIndex">
+                                
+                            </span>
+                             Colors
+                        </h2>
+                        <p class="kssBlock__location">
+                            colors.css line 1
+                        </p>
+                        <div class="kssBlock__description">
+                            
+                        </div>
+                    </div>
+                </section>
+                <section class="kssBlock" id="section-2.1">
+                    <div class="kssBlock__details">
+                        <h2 class="kssBlock__title
+                            kssBlock__titleDepth2">
+                            <span class="kssBlock__titleIndex">
+                                
+                            </span>
+                             Primary color
+                        </h2>
+                        <p class="kssBlock__location">
+                            colors.css line 7
+                        </p>
+                            <div class="primaryColor">
+    Primary Color
+</div>
+                            <pre class="kssBlock__pre"><code class="kssBlock__code html">&lt;div class&#x3D;&quot;primaryColor&quot;&gt;
+    Primary Color
+&lt;/div&gt;</code></pre>
+                        <div class="kssBlock__description">
+                            
+                        </div>
+                    </div>
+                </section>
+                <section class="kssBlock" id="section-2.1">
+                    <div class="kssBlock__details">
+                        <h2 class="kssBlock__title
+                            kssBlock__titleDepth2">
+                            <span class="kssBlock__titleIndex">
+                                
+                            </span>
+                             Secondary color
+                        </h2>
+                        <p class="kssBlock__location">
+                            colors.css line 22
+                        </p>
+                            <div class="secondaryColor">
+    Secondary Color
+</div>
+                            <pre class="kssBlock__pre"><code class="kssBlock__code html">&lt;div class&#x3D;&quot;secondaryColor&quot;&gt;
+    Secondary Color
+&lt;/div&gt;</code></pre>
+                        <div class="kssBlock__description">
+                            
+                        </div>
+                    </div>
+                </section>
+        </main>
+    </body>
+</html>

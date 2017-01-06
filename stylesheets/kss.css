@@ -5,6 +5,12 @@
    box-sizing: border-box;
 }
 
+.kssBody_header {
+    position: relative !important;
+    margin: 0;
+    padding: 0;
+}
+
 .kssBody {
     border-top: 3px solid #ddd;
     background-color: #fff;
@@ -14,11 +20,8 @@
     color: #333;
     padding: 10px 5%;
     margin-bottom: 20px;
-    font-size: 14px;
-}
-
-.kssBody__headline {
     font-size: 15px;
+    background-color: #f4f4f4;
     font-family: arial, sans-serif;
 }
 
@@ -74,7 +77,7 @@
 }
 
 .kssNavBar__link {
-    padding: 2.5px 5px;
+    padding: 5px 0px;
     color: #333;
     display: block;
     border-bottom: 1px solid #ddd;
@@ -133,10 +136,6 @@
     color: #666;
 }
 
-.kssBlock__titleIndex::after {
-    content: '–';
-}
-
 .kssBlock__titleDepth1 {
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -159,7 +158,8 @@
 }
 
 .kssBlock__pre {
-    margin: 10px 0 0 0;
+    margin: 5px 10px;
+    background-color: #f4f4f4;
 }
 
 .kssBlock__details {

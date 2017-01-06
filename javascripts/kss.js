@@ -5,7 +5,6 @@
         for (var i = 0, l = document.styleSheets.length; i < l; i ++) {
 
             var styleSheet = document.styleSheets[i];
-
             var fileName = styleSheet.href.split('/').pop();
 
             if (fileName.indexOf('kss') === -1) {

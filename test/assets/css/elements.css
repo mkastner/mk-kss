@@ -1,0 +1,19 @@
+/*
+Elements
+
+Style Guide: 3
+*/
+
+/*
+Form
+
+Markup:
+<form class="form">
+</form>
+
+Style Guide: 3.1
+*/
+.form {
+    background-color: grey;
+    padding: 5px;
+}
